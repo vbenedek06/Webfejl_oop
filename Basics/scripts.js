@@ -93,7 +93,7 @@ mammal.walk();
 
 
 
-
+console.log("Minden osztály működik!");
 const gomszab = new Player('gomszab')
 console.log(gomszab);
 gomszab.play()
