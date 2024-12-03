@@ -42,6 +42,20 @@ class Player {
         }
     }
 }
+
+class Student extends Person {
+    constructor(name, school) {
+        super(name); // Az ősosztály konstruktorának meghívása
+        this.school = school;
+    }
+
+    getSchool() {
+        return this.school;
+    }
+}
+
+
+
 const gomszab = new Player('gomszab')
 console.log(gomszab);
 gomszab.play()
