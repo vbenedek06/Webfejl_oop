@@ -1,51 +1,41 @@
-// function Player(nickname) {
-//     this.nickname = nickname
-//     this.playedMatch = 0
-// }
 
-// Player.prototype.play = function () {
-//     this.playedMatch++
-//     console.log(this.nickname, this.playedMatch)
-// }
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
 
-// Player.prototype.getTierLevel = function () {
-//     if (this.playedMatch >= 0 && this.playedMatch <= 3) {
-//         return 'A'
-
-//     } else if (this.playedMatch >= 4 && this.playedMatch <= 6) {
-//         return 'B'
-//     } else {
-//         return 'C'
-//     }
-
-// }
-
+    getName() {
+        return this.name;
+    }
+}
 
 
 class Player {
     constructor(nickname) {
-        this.nickname = nickname
-        this.playedMatch = 0
+        this.nickname = nickname;
+        this.playedMatch = 0;
+    }
 
-    }
     play() {
-        this.playedMatch++
-        console.log(this.nickname, this.playedMatch)
+        this.playedMatch++;
+        console.log(this.nickname, this.playedMatch);
     }
+
     getTierLevel() {
         if (this.playedMatch >= 0 && this.playedMatch <= 3) {
-            return 'A'
+            return 'A';
         } else if (this.playedMatch >= 4 && this.playedMatch <= 6) {
-            return 'B'
+            return 'B';
         } else {
-            return 'C'
+            return 'C';
         }
     }
 }
 
+
 class Student extends Person {
     constructor(name, school) {
-        super(name); // Az ősosztály konstruktorának meghívása
+        super(name); 
         this.school = school;
     }
 
@@ -54,6 +44,7 @@ class Student extends Person {
     }
 }
 
+// Állatok osztályai
 class Animal {
     constructor(name = "Ismeretlen állat") {
         this.name = name;
@@ -78,23 +69,23 @@ class Mammal extends Animal {
 
 // Példányosítások
 const person = new Person("János");
-console.log(person.getName()); 
+console.log(person.getName());
 
 const student = new Student("Anna", "Webfejlesztési Iskola");
-console.log(student.getName()); 
-console.log(student.getSchool()); 
+console.log(student.getName());
+console.log(student.getSchool());
 
-const bird = new Bird
-bird.fly(); 
+const bird = new Bird("Papagáj");
+bird.fly();
 
 const mammal = new Mammal("Kutya");
-mammal.makeSound(); 
-mammal.walk();  
-
-
+mammal.makeSound();
+mammal.walk();
 
 console.log("Minden osztály működik!");
-const gomszab = new Player('gomszab')
+
+// tesztelés
+const gomszab = new Player('gomszab');
 console.log(gomszab);
-gomszab.play()
-console.log(gomszab.getTierLevel())
+gomszab.play();
+console.log(gomszab.getTierLevel());
