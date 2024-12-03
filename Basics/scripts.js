@@ -76,6 +76,22 @@ class Mammal extends Animal {
     }
 }
 
+// Példányosítások
+const person = new Person("János");
+console.log(person.getName()); 
+
+const student = new Student("Anna", "Webfejlesztési Iskola");
+console.log(student.getName()); 
+console.log(student.getSchool()); 
+
+const bird = new Bird
+bird.fly(); 
+
+const mammal = new Mammal("Kutya");
+mammal.makeSound(); 
+mammal.walk();  
+
+
 
 
 const gomszab = new Player('gomszab')
