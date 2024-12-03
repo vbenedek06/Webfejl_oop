@@ -64,6 +64,18 @@ class Animal {
     }
 }
 
+class Bird extends Animal {
+    fly() {
+        console.log(`${this.name} repül.`);
+    }
+}
+
+class Mammal extends Animal {
+    walk() {
+        console.log(`${this.name} sétál.`);
+    }
+}
+
 
 
 const gomszab = new Player('gomszab')
