@@ -54,6 +54,16 @@ class Student extends Person {
     }
 }
 
+class Animal {
+    constructor(name = "Ismeretlen állat") {
+        this.name = name;
+    }
+
+    makeSound() {
+        console.log(`${this.name} hangot ad ki.`);
+    }
+}
+
 
 
 const gomszab = new Player('gomszab')
