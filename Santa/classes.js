@@ -7,6 +7,7 @@ class Factory{
 
  AddMano(companion){ // azert kell csak a companion paraméternke, mert a manok list elérhetők classon belul
     this.manolist.push(companion)
+    createRow(companion)
  }
 }
 
