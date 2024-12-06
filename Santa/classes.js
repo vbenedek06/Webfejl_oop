@@ -17,5 +17,16 @@ class Companion{
     this.kernev = kernev
     this.veznev = veznev
     this.reszleg = reszleg
+    this.productList = [] //nem szükséges a példány létrehozásához, construktorba
+ }
+
+ getName(){ // nem kell paraméter, mert benne van a classban
+    return this.kernev + this.veznev
+
+ }
+
+ AddProduct(product){
+    this.productList.push(product)
+
  }
 }
