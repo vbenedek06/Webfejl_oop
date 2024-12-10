@@ -71,6 +71,26 @@ function refreshProductList(companion){ //TODO
     const productTableBody = productTable.querySelector('tbody')
     productTableBody.innerHTML = '';
     // TODO 10
+    Factory.prototype.refreshProductList = function(companion) {
+        const companionName = document.getElementById('companion_name');
+        companionName.style.display = 'block';
+        companionName.innerText = companion.getName();
+    
+        const productTable = document.getElementById('products');
+        productTable.style.display = 'table';
+    
+        const productTableBody = productTable.querySelector('tbody');
+        productTableBody.innerHTML = '';
+    
+        for (const product of companion.productList) {
+            const row = document.createElement('tr');
+            const cell = document.createElement('td');
+            cell.innerText = product;
+            row.appendChild(cell);
+            productTableBody.appendChild(row);
+        }
+    };
+    
 }
 
 /**
