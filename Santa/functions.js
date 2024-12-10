@@ -79,15 +79,17 @@ function refreshProductList(companion){ //TODO
  * 
  * @param {HTMLFormElement} form 
  */
-function addCompanion(form){ //TODO 
-    const firstName =form.querySelector('#cfirstname')
-    const lastname =form.querySelector('#clastname')
-    const area = form.querySelector('#carea')
-    const firstNameValue = firstName.value;
-    const lastNameValue = lastname.value;
-    const areaValue = area.value;
-    // TODO 6
+function addCompanion(form, factory) { //TODO10
+    const firstName = form.querySelector('#cfirstname').value;
+    const lastName = form.querySelector('#clastname').value;
+    const area = form.querySelector('#carea').value;
+
+    const id = factory.generateId(); // Új ID generálása
+    const companion = new Companion(id, firstName, lastName, area); // Companion létrehozása
+    factory.AddMano(companion); // Companion hozzáadása a Factory-hoz
 }
+
+    // TODO 6
 
 /**
  * 
