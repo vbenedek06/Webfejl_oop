@@ -75,4 +75,4 @@ function checkEventListener(e){
     // TODO 10
 }
 
-console.log(factory)
+console.log(factory);
