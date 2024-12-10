@@ -124,4 +124,13 @@ function addProductForm(form, factory){ // TODO
     const companionId = selector.value;
     const product = productName.value;
     // 12
+    
+}
+
+function appendToSelector(companion) {
+    const selector = document.getElementById('companionlist');
+    const option = document.createElement('option');
+    option.value = companion.id;
+    option.innerText = companion.getName(); // Teljes név hozzáadása
+    selector.appendChild(option);
 }
