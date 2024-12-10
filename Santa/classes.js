@@ -21,6 +21,11 @@ class Companion{
     this.productList = [] //nem szükséges a példány létrehozásához, construktorba
  }
 
+ generateId() {
+   return this.manolist.length; // Az ID a tömb aktuális hosszával egyezik
+}
+
+
  getName(){ // nem kell paraméter, mert benne van a classban
     return this.kernev + this.veznev
 
