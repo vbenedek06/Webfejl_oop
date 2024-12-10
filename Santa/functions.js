@@ -124,6 +124,7 @@ function addProductForm(form, factory){ // TODO
     const companionId = selector.value;
     const product = productName.value;
     // 12
+    factory.addProductToCompanion(companionId, productName); // Új termék hozzáadása
     
 }
 
