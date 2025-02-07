@@ -63,6 +63,17 @@ class DataManager{
         }
         this.#updateCallback(result)
     }
+    filter(callback){
+        const result = [];
+        for(const elem of this.#array){
+            if(callback(elem)){
+                result.push(elem)
+            }
+        }
+        this.#updateCallback(result)
+
+    }
+
 }
 
 
@@ -97,3 +108,25 @@ class Datatable{
 
 const dataManager = new DataManager([{nev: 'Feri', eletkor:17},{nev:'Teri',eletkor:18},{nev:'Rebi',eletkor:17}])
 const dataTable = new Datatable(dataManager)
+const input = document.createElement('input')
+input.type = 'file'
+document.body.appendChild(input)
+input.addEventListener('change',(e)=> {
+    const file = e.currentTarget.files[0]
+    const freader = new FileReader
+    freader.readAsText(file)
+    freader.onload=()=>{//ugyan az mint ez freader.addEventListener('load')
+        const content = freader.result
+        const contentRows =content.split('\n')
+        for (const row of contentRows){
+            const split = row.split(';')
+            const person = {nev:split[0],eletkor:Number(split[1])}
+            dataManager.add(person)
+    
+
+
+}
+    }
+
+
+})
