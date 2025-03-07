@@ -6,12 +6,14 @@ class Manager{
     #nextCardCallback
     #appanedCardToSolution
     #finishCallback
+    #addCallBack;
 
 
     constructor(array = []){
         this.#array = array;
         this.#solution = {}
         this.#currentCardNumber = 0;
+        this.#addCallBack = () => {}
     }
 
     add(card){
@@ -56,7 +58,18 @@ class Manager{
             this.#finishCallback(result);
         }
     }
+    /**
+     * @returns {strings} // az array tartalma
+     */
+    generateExportText(){
+        const result = []
+        for(const card of this.#array){
+            const line = `${card.text};${card.correct}`
+            result.push(line);
+        }
+        return result.join('\n')
 
+    }
     start(){
         this.#nextCardCallback(this.#array[0].text);
     }
